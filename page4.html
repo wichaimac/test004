@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup Website</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <h1></h1>
+        <!-- <h1>Page4</h1> -->
+    </header>
+    <main>
+        <section>
+            <h2>นี่คือโลกหลังจากที่อารยธรรมมนุษย์ล่มสลาย มนุษย์ทุกคนสูญพันธ์ และหลงเหลือไว้เพียงประวัติศาสตร์</h2>
+            <p>หลังจากที่ทรัพยากรธรรมชาติที่หลงเหลืออยู่น้อยนิด แต่เหล่าบรรดามนุษย์นั้นก็ยังไม่เห็นความสำคัญ และเผาผลาญทรัพยากรจนเหลือเพียงแค่ 1%</p2>
+            <p2>ทั้งสัตว์น้อยสัตว์ใหญ่นั้นจำเป็นจะต้องสานต่ออารยธรรมของมนุษย์ โดยใช้พลังงานที่เหลืออยู่น้อยนิดให้คุ้มค่าที่สุด</p2>
+            <p></p>
+            <p2>ตอนนี้ท่านเทพแห่งโลก ให้โอกาสฉันไปเกิดเป็นสัตว์โลก โดยจำเป็นจะต้องทำข้อตกลงว่าจะรักษาธรรมชาติ</p2>
+            <p></p>
+            <div class="form-group">
+                <input type="checkbox" id="acceptCheckbox">
+                <label for="acceptCheckbox">ฉันขอสัญญาว่าจะใช้ทรัพยากรธรรมชาติอย่าพอเพียง</label>
+            </div>
+            <button type="button" id="nextButton">กลับมาเกิดใหม่</button>
+            <p></p>
+            <p class="text-faded-small">เป็นเพียงเรื่องที่แต่งขึ้นเท่านั้น</p>
+        </section>
+    </main>
+    <footer>
+        <p>จัดทำโดย COE in Induction</p>
+    </footer>
+    <script>
+        document.getElementById('nextButton').addEventListener('click', function() {
+            if (document.getElementById('acceptCheckbox').checked) {
+                window.location.href = 'quiz0.html'; // เปลี่ยน URL ให้เป็นหน้าถัดไปที่คุณต้องการ
+            } else {
+                alert('ท่านเทพแห่งโลกไม่ยอมให้คุณไปเกิดใหม่เพราะคุณไม่ยอมให้สัญญากับเขา');
+            }
+        });
+    </script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

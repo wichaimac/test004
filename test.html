@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup Website - Step 2</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <h1>Mockup Website</h1>
+    </header>
+    <main>
+        <section>
+            <form id="personalityForm">
+                <label for="age">อายุ</label>
+                <input type="number" id="age" name="age" required>
+                
+                <label for="gender">เพศ</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">ชาย</option>
+                    <option value="female">หญิง</option>
+                    <option value="other">อื่นๆ</option>
+                    <option value="non-binary">ไม่ระบุ</option>
+                </select>
+
+                <label for="occupation">สถานะอาชีพ</label>
+                <select id="occupation" name="occupation" required>
+                    <option value="unemployed">ว่างงาน</option>
+                    <option value="student">นักเรียน, นักศึกษา</option>
+                    <option value="professional">ทำงาน</option>
+                </select>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+    <script src="script.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/skipsubmitinfo.js"></script>
+    <script src="script/clientdata.js"></script>
+    <script src="script/server.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BetaWebsite - QuizPageTest</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <!-- <h1>Quiz14/16</h1> -->
+        <h1></h1>
+    </header>
+    <main>
+        <section>
+            <h2>14/16</h2>
+            <img src="images/quiz14.png" alt="คำอธิบายรูปภาพ" width="300">
+            <p>ในเวลาที่แสนเหน็ดเหนื่อยของทุกคน ในที่สุดก็ได้มาถึงที่บ้านยีราฟอย่างปลอดภัย ครอบครัวของเขาให้การต้อนรับเป็นอย่างดี และเตรียมที่พักไว้สำหรับพักผ่อน ล้มตัวลงพักบนเตียงและหมอนที่สุดแสนธรรมดา แต่ด้วยความอ่อนล้า เตียงและหมอนนี้กลับให้ความรู้สึกเหมือนนอนอยู่บนเมฆเลย สบายอย่างไม่น่าเหลือเชื่อ</p>
+            <button onclick="userAnswer('j'); goToQuiz15()">A. ทำรายการสิ่งที่ต้องทำเมื่อขากลับ และจัดลำดับความสำคัญ</button>
+            </p>
+            <button onclick="userAnswer('p'); goToQuiz15()">B. ปล่อยให้เวลาผ่านไปตามธรรมชาติและทำสิ่งที่รู้สึกว่าอยากทำในขณะนั้น</button>
+        </section>
+    </main>
+    <footer>
+        <p>จัดทำโดย COE in Inducation</p>
+    </footer>
+
+    <script>
+        function userAnswer(answer) {
+            let userAnswers = JSON.parse(localStorage.getItem('userAnswers')) || {};
+            userAnswers['question5'] = answer; // เปลี่ยน 'question1' เป็นคำถามที่เหมาะสม
+            console.log("User answer before saving:", userAnswers); // ตรวจสอบค่าก่อนบันทึก
+            localStorage.setItem('userAnswers', JSON.stringify(userAnswers));
+        }
+
+        function goToQuiz2() {
+            // ฟังก์ชันสำหรับไปยังคำถามถัดไป
+            window.location.href = 'quiz3.html'; // ตัวอย่าง: เปลี่ยนเป็นหน้าคำถามถัดไป
+        }
+    </script>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/result.js"></script>
+    <script src="scripts/debug.js"></script>
+</body>
+</html>

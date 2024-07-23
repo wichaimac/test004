@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup Website - Step 2</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <!-- <h1>MockupWebsite002</h1> -->
+        <h1></h1>
+    </header>
+    <main>
+        <section>
+            <form id="personalityForm">
+                <label for="age">อายุ</label>
+                <input type="number" id="age" name="age" required>
+                <label for="gender">เพศ</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">ชาย</option>
+                    <option value="female">หญิง</option>
+                    <option value="other">อื่นๆ</option>
+                    <option value="non-gender">ไม่ต้องการระบุ</option>
+                </select>
+                <p></p>
+                <label for="occupation">ปัจจุบันท่านกำลัง</label>
+                <select id="occupation" name="occupation" required onchange="checkOccupation()">
+                    <option value="unemployed">ว่างงาน</option>
+                    <option value="student">นักเรียน,นักศึกษา</option>
+                    <option value="professional">ประกอบอาชีพ</option>
+                </select>
+
+                <p>
+                <div id="additionalOccupation" style="display:none;">
+                    <label for="occupationDetail">กรุณาระบุอาชีพ</label>
+                    <select id="occupationDetail" name="occupationDetail">
+                        <option value="เกษตรกรรมและปศุสัตว์">เกษตรกรรมและปศุสัตว์</option>
+                        <option value="อุตสาหกรรมและการผลิต">อุตสาหกรรมและการผลิต</option>
+                        <option value="บริการและการค้า">บริการและการค้า</option>
+                        <option value="การศึกษา">การศึกษา</option>
+                        <option value="การแพทย์และสุขภาพ">การแพทย์และสุขภาพ</option>
+                        <option value="เทคโนโลยีสารสนเทศ">เทคโนโลยีสารสนเทศ</option>
+                        <option value="การก่อสร้างและโยธา">การก่อสร้างและโยธา</option>
+                        <option value="การบริการสาธารณะและการบริหารราชการ">การบริการสาธารณะและการบริหารราชการ</option>
+                        <option value="การเงินและการธนาคาร">การเงินและการธนาคาร</option>
+                        <option value="การท่องเที่ยวและการโรงแรม">การท่องเที่ยวและการโรงแรม</option>
+                        <option value="ศิลปะและบันเทิง">ศิลปะและบันเทิง</option>
+                        <option value="การสื่อสารและการประชาสัมพันธ์">การสื่อสารและการประชาสัมพันธ์</option>
+                        <option value="ขนส่งและโลจิสติกส์">ขนส่งและโลจิสติกส์</option>
+                        <option value="กฎหมาย">กฎหมาย</option>
+                        <option value="การวิจัยและพัฒนา">การวิจัยและพัฒนา</option>
+                        <option value="other">อื่นๆ</option>
+                    </select>
+                </div>
+
+                <!-- ฟิลด์สำหรับระบุชั้นปีและสถานที่ศึกษา -->
+                <div id="studentDetails" style="display:none;">
+                    <label for="occupationDetail">กำลังศึกษาในระดับ</label>
+                    <select id="occupationDetail" name="occupationDetail">
+                        <option value="ระดับประถมศึกษา">ระดับประถมศึกษา</option>
+                        <option value="มัธยมศึกษาตอนต้น">มัธยมศึกษาตอนต้น</option>
+                        <option value="มัธยมศึกษาตอนปลาย">มัธยมศึกษาตอนปลาย</option>
+                        <option value="ประกาศนียบัตรวิชาชีพ">ประกาศนียบัตรวิชาชีพ (ปวช.)</option>
+                        <option value="ประกาศนียบัตรวิชาชีพชั้นสูง">ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)</option>
+                        <option value="ประกาศนียบัตรวิชาชีพเทคนิค">ประกาศนียบัตรวิชาชีพเทคนิค (ปวท.)</option>
+                        <option value="ประกาศนียบัตรวิชาชีพชั้นสูงพิเศษ">ประกาศนียบัตรวิชาชีพชั้นสูงพิเศษ (ปวส.พิเศษ)</option>
+                        <option value="ปริญญาตรี">ปริญญาตรี</option>
+                        <option value="ปริญญาโท">ปริญญาโท</option>
+                        <option value="ปริญญาเอก">ปริญญาเอก</option>
+                        <option value="อื่นๆ">อื่นๆ</option>
+                        <input type="text" id="institution" name="institution" placeholder="ระบุสถานที่ที่ท่านกำลังศึกษา">
+                </div>
+                <button type="button" onclick="goToPage3()">เข้าสู่บททดสอบ</button>
+                <p></p>
+
+                
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>จัดทำโดย COE in Induction</p>
+    </footer>
+    <script>
+        function checkOccupation() {
+            const occupation = document.getElementById('occupation').value;
+            const additionalOccupation = document.getElementById('additionalOccupation');
+            const studentDetails = document.getElementById('studentDetails');
+            if (occupation === 'professional') {
+                additionalOccupation.style.display = 'block';
+                studentDetails.style.display = 'none';
+            } else if (occupation === 'student') {
+                studentDetails.style.display = 'block';
+                additionalOccupation.style.display = 'none';
+            } else {
+                additionalOccupation.style.display = 'none';
+                studentDetails.style.display = 'none';
+            }
+        }
+
+    </script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/skipsubmitinfo.js"></script>
+    <script src="script/clientdata.js"></script>
+    <script src="script/server.js"></script>
+</body>
+</html>

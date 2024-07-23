@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BetaWebsite - QuizPageTest</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <!-- <h1>Quiz16/16</h1> -->
+        <h1></h1>
+    </header>
+    <main>
+        <section>
+            <h2>16/16</h2>
+            <!-- <img src="images/quiz14.png" alt="คำอธิบายรูปภาพ" width="300"> -->
+            <p>หลังจากงานฉลองจบลง ผมจำได้ดี เสียงลมพัดโกรก อากาศชื้นๆ แต่ก็ได้ความอบอุ่นจากกองไฟ มีเสียงแตกของถ่านในกองไฟเป็นช่วงๆ เป็นวันที่ดีที่สุดสำหรับฉันเลย</p>
+            <button onclick="userAnswer('e'); goToResultPage()">A.ชวนเพื่อนๆ เพื่อนั่งรอบกองไฟพร้อม พูดคุย และ เล่นเกมสนุกๆไปด้วยกัน</button>
+            </p>
+            <button onclick="userAnswer('i'); goToResultPage()">B.หยิบหนังสือเล่มโปรด ออกมาอ่าน เพื่อพักผ่อนหย่อนใจ และ ดื่มด่ำกับบรรยากาศสุดแสนสงบ</button>
+        </section>
+    </main>
+    <footer>
+        <p>จัดทำโดย COE in Inducation</p>
+    </footer>
+
+    <script>
+        function userAnswer(answer) {
+            let userAnswers = JSON.parse(localStorage.getItem('userAnswers')) || {};
+            userAnswers['question5'] = answer; // เปลี่ยน 'question1' เป็นคำถามที่เหมาะสม
+            console.log("User answer before saving:", userAnswers); // ตรวจสอบค่าก่อนบันทึก
+            localStorage.setItem('userAnswers', JSON.stringify(userAnswers));
+        }
+
+        function goToQuiz2() {
+            // ฟังก์ชันสำหรับไปยังคำถามถัดไป
+            window.location.href = 'quiz3.html'; // ตัวอย่าง: เปลี่ยนเป็นหน้าคำถามถัดไป
+        }
+    </script>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/result.js"></script>
+    <script src="scripts/debug.js"></script>
+</body>
+</html>
